@@ -64,7 +64,7 @@
 }
 
 .food {
-  background: radial-gradient(rgb(255, 0, 179), rgb(0, 17, 255));
+  background: radial-gradient(rgb(81, 255, 0), rgb(0, 17, 255));
   /* background-color: rgb(255, 174, 0); */
   border: 0.75vh dotted white;
   border-radius: 100%;
