@@ -38,7 +38,7 @@
     rgba(255, 255, 255, 0.514),
     rgba(121, 251, 255, 0.5)
   );
-  border: 3px solid rgb(255, 62, 197);
+  border: 0.75vh solid rgb(255, 62, 197);
   width: 80vmin;
   height: 80vmin;
   display: grid;
