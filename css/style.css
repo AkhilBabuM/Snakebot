@@ -1,52 +1,78 @@
-*{
-    padding: 0;
-    margin:0;
+@import url('https://fonts.googleapis.com/css2?family=VT323&display=swap');
+* {
+  padding: 0;
+  margin: 0;
 }
 
-.body{
-    background: url("../img/bg.jpg");
-    min-height: 100vh;
-    background-size: 100vw 100vh;
-    background-repeat: no-repeat;
-    display:flex;
-    justify-content: center;
-    align-items:center;
+.body {
+  background: url("../img/bg.jpg");
+  min-height: 100vh;
+  background-size: 100vw 100vh;
+  background-repeat: no-repeat;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-#board{
-    background: linear-gradient(rgba(255, 255, 255, 0.514), rgba(121, 251, 255, 0.5));
-    border: 3px solid rgb(255, 62, 197);
-    width: 90vmin;
-    height: 92vmin;
-    display:grid;
-    grid-template-rows: repeat(18,1fr);
-    grid-template-columns: repeat(18,1fr);
+#scoreBox {
+  position: absolute;
+  top: 9px;
+  right: 200px;
+  font-size: 100px;
+  font-weight: bold;
+	color:white;
+	font-family: 'VT323', monospace;
+}
+#hiscoreBox {
+  position: absolute;
+  top: 90px;
+  right: 200px;
+  font-size: 70px;
+  font-weight: bold;
+	color:rgb(0, 195, 255);
+	font-family: 'VT323', monospace;
 }
 
-.head{
-    background-color: rgb(255, 255, 255);
-    box-shadow:  1px 1px 5px rgba(255, 255, 255, 0.466),  -1px -1px 5px rgba(255, 255, 255, 0.473);
-    border-radius:20%;
-    z-index:3;
+#board {
+  background: linear-gradient(
+    rgba(255, 255, 255, 0.514),
+    rgba(121, 251, 255, 0.5)
+  );
+  border: 3px solid rgb(255, 62, 197);
+  width: 80vmin;
+  height: 80vmin;
+  display: grid;
+  grid-template-rows: repeat(18, 1fr);
+  grid-template-columns: repeat(18, 1fr);
 }
 
-.snake{
-    /* background-color: purple; */
-    border: 5px solid white;
-    border-radius:20%;
-    box-shadow:  1px 1px 5px rgba(255, 255, 255, 0.466),  -1px -1px 5px rgba(255, 255, 255, 0.473);
-    background-color: rgba(0, 255, 255, 0.219);
+.head {
+  background-color: rgb(255, 255, 255);
+  box-shadow: 1px 1px 5px rgba(255, 255, 255, 0.466),
+    -1px -1px 5px rgba(255, 255, 255, 0.473);
+  border-radius: 20%;
+  z-index: 3;
 }
 
-.food{
-    background: radial-gradient(rgb(81, 255, 0),rgb(0, 17, 255));
-    /* background-color: rgb(255, 174, 0); */
-    border: 3px dotted white;
-    border-radius: 100%;
-    box-shadow:  1px 1px 5px rgba(255, 255, 255, 0.466),  -1px -1px 5px rgba(255, 255, 255, 0.473);
+.snake {
+  /* background-color: purple; */
+  border: 5px solid white;
+  border-radius: 20%;
+  box-shadow: 1px 1px 5px rgba(255, 255, 255, 0.466),
+    -1px -1px 5px rgba(255, 255, 255, 0.473);
+  background-color: rgba(0, 255, 255, 0.219);
+}
 
-    /* box-shadow: inset 2px 2px 10px rgba(0, 0, 0, 0.466), inset -2px -2px 10px rgba(255, 255, 255, 0.473); */
-    /* -webkit-box-shadow: 5px 5px 5px 5px #FFFFFF;
+.food {
+  background: radial-gradient(rgb(81, 255, 0), rgb(0, 17, 255));
+  /* background-color: rgb(255, 174, 0); */
+  border: 3px dotted white;
+  border-radius: 100%;
+  box-shadow: 1px 1px 5px rgba(255, 255, 255, 0.466),
+    -1px -1px 5px rgba(255, 255, 255, 0.473);
+
+  /* box-shadow: inset 2px 2px 10px rgba(0, 0, 0, 0.466), inset -2px -2px 10px rgba(255, 255, 255, 0.473); */
+  /* -webkit-box-shadow: 5px 5px 5px 5px #FFFFFF;
 box-shadow: 5px 5px 5px 5px #FFFFFF; */
-    /* box-shadow: inset 5px 5px gold; */
+  /* box-shadow: inset 5px 5px gold; */
 }

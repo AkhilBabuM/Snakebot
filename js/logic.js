@@ -27,15 +27,20 @@ function main(ctime) {
 function isCollide(snake) {
   //self collision
   for (let i = 1; i < snakeArr.length; i++) {
-		if(snake[i].x === snake[0].x && snake[i].y === snake[0].y){
-			return true;
-		}
-	}
+    if (snake[i].x === snake[0].x && snake[i].y === snake[0].y) {
+      return true;
+    }
+  }
 
-	//box collision
-	if(snake[0].x>=18 || snake[0].x<=0 || snake[0].y>=18 || snake[0].y<=0){
-		return true;
-	}
+  //box collision
+  if (
+    snake[0].x >= 18 ||
+    snake[0].x <= 0 ||
+    snake[0].y >= 18 ||
+    snake[0].y <= 0
+  ) {
+    return true;
+  }
 }
 
 function gameEngine() {
@@ -52,6 +57,13 @@ function gameEngine() {
   //On eating Food
   if (snakeArr[0].y === food.y && snakeArr[0].x === food.x) {
     foodSound.play();
+    score += 1;
+    if (score > hiscoreval) {
+      hiscoreval = score;
+      localStorage.setItem("hiscore", JSON.stringify(hiscoreval));
+			hiscoreBox.innerHTML = "HIGH SCORE: " + hiscoreval;
+    }
+    scoreBox.innerHTML = "SCORE: " + score;
     snakeArr.unshift({
       x: snakeArr[0].x + inputDir.x,
       y: snakeArr[0].y + inputDir.y,
@@ -96,7 +108,16 @@ function gameEngine() {
 }
 
 //main logic
-window.requestAnimationFrame(main);
+let hiscore = localStorage.getItem("hiscore");
+if (hiscore === null) {
+	hiscoreval = 0;
+  localStorage.setItem("hiscore", JSON.stringify(hiscoreval));
+} else {
+	hiscoreval = JSON.parse(hiscore);
+  hiscoreBox.innerHTML = "HIGH SCORE: " + hiscore;
+}
+
+window.requestAnimationFrame(main);  
 window.addEventListener("keydown", (e) => {
   inputDir = { x: 0, y: 1 }; //Start game
   moveSound.play();
