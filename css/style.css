@@ -24,13 +24,29 @@
 }
 
 .head{
-    background-color: red;
+    background-color: rgb(255, 255, 255);
+    box-shadow:  1px 1px 5px rgba(255, 255, 255, 0.466),  -1px -1px 5px rgba(255, 255, 255, 0.473);
+    border-radius:20%;
+    z-index:3;
 }
 
 .snake{
-    background-color: purple;
+    /* background-color: purple; */
+    border: 5px solid white;
+    border-radius:20%;
+    box-shadow:  1px 1px 5px rgba(255, 255, 255, 0.466),  -1px -1px 5px rgba(255, 255, 255, 0.473);
+    background-color: rgba(0, 255, 255, 0.219);
 }
 
 .food{
-    background-color: yellow;
+    background: radial-gradient(rgb(81, 255, 0),rgb(0, 17, 255));
+    /* background-color: rgb(255, 174, 0); */
+    border: 3px dotted white;
+    border-radius: 100%;
+    box-shadow:  1px 1px 5px rgba(255, 255, 255, 0.466),  -1px -1px 5px rgba(255, 255, 255, 0.473);
+
+    /* box-shadow: inset 2px 2px 10px rgba(0, 0, 0, 0.466), inset -2px -2px 10px rgba(255, 255, 255, 0.473); */
+    /* -webkit-box-shadow: 5px 5px 5px 5px #FFFFFF;
+box-shadow: 5px 5px 5px 5px #FFFFFF; */
+    /* box-shadow: inset 5px 5px gold; */
 }

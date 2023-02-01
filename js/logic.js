@@ -6,7 +6,7 @@ const gameOverSound = new Audio("music/gameover.mp3");
 const moveSound = new Audio("music/move.mp3");
 const musicSound = new Audio("music/music.mp3");
 
-let speed = 20;
+let speed = 10;
 let lastPaintTime = 0;
 
 let score = 0;
@@ -24,8 +24,18 @@ function main(ctime) {
   gameEngine();
 }
 
-function isCollide(sarr) {
-  return false;
+function isCollide(snake) {
+  //self collision
+  for (let i = 1; i < snakeArr.length; i++) {
+		if(snake[i].x === snake[0].x && snake[i].y === snake[0].y){
+			return true;
+		}
+	}
+
+	//box collision
+	if(snake[0].x>=18 || snake[0].x<=0 || snake[0].y>=18 || snake[0].y<=0){
+		return true;
+	}
 }
 
 function gameEngine() {
@@ -41,7 +51,7 @@ function gameEngine() {
   }
   //On eating Food
   if (snakeArr[0].y === food.y && snakeArr[0].x === food.x) {
-		foodSound.play();
+    foodSound.play();
     snakeArr.unshift({
       x: snakeArr[0].x + inputDir.x,
       y: snakeArr[0].y + inputDir.y,
