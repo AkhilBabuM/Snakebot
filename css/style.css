@@ -1,0 +1,32 @@
+*{
+    padding: 0;
+    margin:0;
+}
+
+.body{
+    background: url("../img/bg.jpg");
+    min-height: 100vh;
+    background-size: 100vw 100vh;
+    background-repeat: no-repeat;
+    display:flex;
+    justify-content: center;
+    align-items:center;
+}
+
+#board{
+    background: linear-gradient(rgba(255, 255, 255, 0.514), rgba(121, 251, 255, 0.5));
+    border: 3px solid rgb(255, 62, 197);
+    width: 90vmin;
+    height: 92vmin;
+    display:grid;
+    grid-template-rows: repeat(18,1fr);
+    grid-template-columns: repeat(18,1fr);
+}
+
+.head{
+    background-color: red;
+}
+
+.food{
+    background-color: purple;
+}
